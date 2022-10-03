@@ -1,0 +1,13 @@
+<div class="card m-3" style="width: 20rem;">
+  <div class="card-header">Date Created: {{postIt.date | date}} </div>
+  <textarea
+    class="card-body"
+    placeholder="Write note here"
+    [(ngModel)]="postIt.input"
+  ></textarea>
+  <div class="card-footer d-flex justify-content-between" >
+    <button class="btn btn-warning" (click)="onCancelAddNew()">Cancel</button>
+    <button class="btn btn-success" (click)="onSubmitNew()">Submit</button>
+  </div>
+</div>
+

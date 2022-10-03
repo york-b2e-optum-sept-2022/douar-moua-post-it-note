@@ -1,0 +1,19 @@
+<div class="card m-3" style="width: 20rem;">
+  <div class="card-header">Date Created: {{postItList.date | date}} </div>
+
+  <div class="card-body">
+    <div *ngIf="isUpdating == false">{{postItList.input}}</div>
+    <textarea *ngIf="isUpdating == true" placeholder="Write note here"></textarea>
+  </div>
+
+  <div class="card-footer d-flex justify-content-between" *ngIf="isUpdating == false">
+    <button class="btn btn-danger">Delete</button>
+    <button class="btn btn-success" (click)="onUpdatePostIt()">Update</button>
+  </div>
+
+  <div class="card-footer d-flex justify-content-between" *ngIf="isUpdating == true">
+    <button class="btn btn-warning" (click)="onCancelUpdate()">Cancel</button>
+    <button class="btn btn-success">Save Update</button>
+  </div>
+
+</div>
